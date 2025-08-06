@@ -1,4 +1,6 @@
+
 import { Phone, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -22,24 +24,24 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center space-x-4">
-          <a href="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="h-8 w-8 rounded-lg bg-gradient-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">F</span>
             </div>
             <span className="text-xl font-bold text-gradient">FenceFresh</span>
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-smooth"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="#blog"
@@ -74,13 +76,13 @@ const Header = () => {
               </SheetHeader>
               <nav className="flex flex-col space-y-4 mt-6">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
-                    href={link.href}
+                    to={link.href}
                     className="text-lg font-medium text-muted-foreground hover:text-primary transition-smooth"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
                 <a
                   href="#blog"
