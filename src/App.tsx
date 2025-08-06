@@ -10,6 +10,9 @@ import BirminghamServices from "./pages/BirminghamServices";
 import WolverhamptonServices from "./pages/WolverhamptonServices";
 import CoventryServices from "./pages/CoventryServices";
 import StaffordServices from "./pages/StaffordServices";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +30,9 @@ const App = () => (
           <Route path="/fencing-services-in-wolverhampton" element={<WolverhamptonServices />} />
           <Route path="/fencing-services-in-coventry" element={<CoventryServices />} />
           <Route path="/fencing-services-in-stafford" element={<StaffordServices />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
