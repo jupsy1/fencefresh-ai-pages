@@ -1,52 +1,38 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Home, Building2, Wrench, Shield, TreePine, Fence } from "lucide-react";
+import { Paintbrush, Fence, TreePine } from "lucide-react";
 import fenceTypesImage from "@/assets/fence-types.jpg";
 
 const Services = () => {
   const services = [
     {
-      icon: Home,
-      title: "Garden Fencing",
-      description: "Beautiful wooden panel fencing, picket fences, and decorative boundaries for residential properties.",
-      features: ["Pressure treated timber", "Various heights available", "Panel and post installation"],
-      price: "From £45/meter"
+      icon: Paintbrush,
+      title: "Small Fence Painting",
+      description: "Professional fence painting service for small fences up to 10 meters in length.",
+      features: ["High-quality weather-resistant paint", "Surface preparation included", "Multiple color options"],
+      price: "£450–£500"
     },
     {
-      icon: Building2,
-      title: "Commercial Fencing",
-      description: "Security fencing solutions for businesses, including palisade, mesh, and acoustic barriers.",
-      features: ["Security grade materials", "Custom height options", "Access gates included"],
-      price: "From £85/meter"
+      icon: Paintbrush,
+      title: "Medium Fence Painting",
+      description: "Comprehensive fence painting for medium-sized fences between 10-20 meters.",
+      features: ["Premium exterior paint", "Power washing included", "2-coat application"],
+      price: "£500–£750"
     },
     {
-      icon: Wrench,
-      title: "Fence Repairs",
-      description: "Professional repair services for damaged panels, posts, and gates to restore your fence.",
-      features: ["Same-day emergency repairs", "Post replacement", "Panel matching"],
-      price: "From £75/visit"
-    },
-    {
-      icon: Shield,
-      title: "Security Fencing",
-      description: "High-security perimeter fencing with anti-climb features for ultimate property protection.",
-      features: ["Anti-climb spikes", "Reinforced posts", "CCTV integration ready"],
-      price: "From £120/meter"
-    },
-    {
-      icon: TreePine,
-      title: "Boundary Fencing",
-      description: "Clear property boundaries with durable fencing solutions that stand the test of time.",
-      features: ["Surveyor marking", "Legal boundary compliance", "Neighbour consultation"],
-      price: "From £55/meter"
+      icon: Paintbrush,
+      title: "Large Fence Painting",
+      description: "Custom fence painting service for large fences over 20 meters requiring detailed planning.",
+      features: ["Site survey included", "Custom color matching", "Professional finish guarantee"],
+      price: "£750+ (custom quote)"
     },
     {
       icon: Fence,
-      title: "Gates & Access",
-      description: "Custom gates and access solutions including automation for residential and commercial use.",
-      features: ["Manual and automatic options", "Intercom systems", "Vehicle and pedestrian gates"],
-      price: "From £350/gate"
+      title: "Gate Painting",
+      description: "Specialized painting service for gates including hinges and hardware protection.",
+      features: ["Hardware masking", "Rust treatment", "Smooth operation maintained"],
+      price: "£150–£300 per gate"
     }
   ];
 
@@ -56,11 +42,11 @@ const Services = () => {
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">Our Services</Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Complete Fencing Solutions for Every Need
+            Professional Fence Painting Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From residential garden boundaries to commercial security systems, we provide comprehensive 
-            fencing services with premium materials and expert craftsmanship.
+            Transform and protect your fence with our expert painting services. We offer competitive 
+            pricing based on fence size with premium quality finishes that last.
           </p>
         </div>
 
@@ -97,15 +83,15 @@ const Services = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Why Choose Our Fencing Services?</h3>
+            <h3 className="text-2xl font-bold mb-4">Why Choose Our Fence Painting Services?</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <div className="h-6 w-6 rounded-full bg-primary flex items-center justify-center mt-0.5">
                   <span className="text-primary-foreground text-xs font-bold">✓</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold">10-Year Guarantee</h4>
-                  <p className="text-muted-foreground">All our installations come with a comprehensive 10-year warranty for your peace of mind.</p>
+                  <h4 className="font-semibold">2-Year Paint Guarantee</h4>
+                  <p className="text-muted-foreground">All our paint work comes with a 2-year guarantee against peeling and fading.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -113,8 +99,8 @@ const Services = () => {
                   <span className="text-primary-foreground text-xs font-bold">✓</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold">Premium Materials</h4>
-                  <p className="text-muted-foreground">We source only the highest quality timber and materials, all pressure-treated for longevity.</p>
+                  <h4 className="font-semibold">Premium Paints</h4>
+                  <p className="text-muted-foreground">We use only the highest quality weather-resistant paints designed for exterior fence applications.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -122,8 +108,8 @@ const Services = () => {
                   <span className="text-primary-foreground text-xs font-bold">✓</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold">Expert Installation</h4>
-                  <p className="text-muted-foreground">Our certified installers ensure every fence is perfectly aligned and securely installed.</p>
+                  <h4 className="font-semibold">Professional Application</h4>
+                  <p className="text-muted-foreground">Our experienced painters ensure even coverage and smooth finishes with proper surface preparation.</p>
                 </div>
               </div>
             </div>
