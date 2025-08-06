@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -29,23 +30,47 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const { error } = await supabase
+        .from('quote_requests')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            postcode: formData.postcode,
+            service: formData.service,
+            message: formData.message
+          }
+        ]);
 
-    toast({
-      title: "Quote Request Submitted!",
-      description: "Thank you for your interest. We'll contact you within 2 hours during business hours.",
-    });
+      if (error) {
+        throw error;
+      }
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      postcode: "",
-      service: "",
-      message: ""
-    });
-    setIsSubmitting(false);
+      toast({
+        title: "Quote Request Submitted!",
+        description: "Thank you for your interest. We'll contact you within 2 hours during business hours.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        postcode: "",
+        service: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error submitting quote request:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your request. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
