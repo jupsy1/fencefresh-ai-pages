@@ -1,11 +1,11 @@
-- Create table for storing quote requests
+-- Create table for storing quote requests
 CREATE TABLE public.quote_requests (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   email TEXT NOT NULL,
   phone TEXT NOT NULL,
   postcode TEXT NOT NULL,
-  service TEXT,-
+  service TEXT,
   message TEXT,
   status TEXT NOT NULL DEFAULT 'pending',
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
